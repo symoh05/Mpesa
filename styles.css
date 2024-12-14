@@ -34,7 +34,7 @@ a {
 }
 
 .mpesa-message a {
-    color: #00BFFF;
+    color: white;
     font-size: 15px;
 }
 
@@ -204,8 +204,8 @@ a:hover {
 }
 
 .footer a {
-    color: #00ffea;
-    text-decoration: none;
+    color:  #00BFFF;
+    text-decoration: underline;
 }
 
 .footer a:hover {
