@@ -101,7 +101,7 @@ body, html {
     color: #fff;
 }
 
-/* /* Header Styling */
+/* Header Styling */
 .header {
     display: flex;
     justify-content: space-between;
@@ -111,8 +111,12 @@ body, html {
     border-bottom: 1px solid #333;
     position: sticky;
     top: 0;
-    width:100%;
+    width: 100%; /* Ensures the header spans the full width */
+    left: 0; /* Ensures the header aligns to the left edge */
+    right: 0; /* Ensures the header aligns to the right edge */
+    z-index: 1000; /* Keeps it above other content */
 }
+
 
 .header-left {
     display: flex;
