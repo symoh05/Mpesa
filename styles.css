@@ -31,7 +31,6 @@ a {
 
 .mpesa-message strong {
     color: #fff;
-    font-weight: bold;
 }
 
 .mpesa-message a {
@@ -77,7 +76,6 @@ button {
     border: none;
     padding: 10px;
     font-size: 15px;
-    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
@@ -146,7 +144,6 @@ body, html {
 .mpesa-title {
     color: #fff;
     font-size: 18px;
-    font-weight: bold;
 }
 
 /* Three Dots Menu */
