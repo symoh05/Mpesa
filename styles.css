@@ -205,12 +205,13 @@ a:hover {
     padding: 15px 10px;
     border-top: 1px solid #333;
     background-color: #2E2E2E;
-    position: fixed;   /* Keeps the footer at the bottom of the page */
+    position: fixed;   /* Makes the footer stay at the bottom of the viewport */
     bottom: 0;         /* Aligns the footer to the bottom */
-    left: 0;           /* Ensures the footer aligns to the left */
-    right: 0;          /* Ensures the footer aligns to the right */
+    left: 0;           /* Aligns the footer to the left edge */
+    right: 0;          /* Aligns the footer to the right edge */
     width: 100%;       /* Ensures the footer spans the full width */
-    z-index: 1000;     /* Keeps it on top of other content */
+    z-index: 1000;     /* Keeps the footer on top of other content */
+    margin: 0;         /* Removes any extra margin */
 }
 
 
