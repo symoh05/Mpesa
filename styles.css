@@ -205,9 +205,14 @@ a:hover {
     padding: 15px 10px;
     border-top: 1px solid #333;
     background-color: #2E2E2E;
-    position: sticky;
-    bottom: 0;
+    position: fixed;   /* Keeps the footer at the bottom of the page */
+    bottom: 0;         /* Aligns the footer to the bottom */
+    left: 0;           /* Ensures the footer aligns to the left */
+    right: 0;          /* Ensures the footer aligns to the right */
+    width: 100%;       /* Ensures the footer spans the full width */
+    z-index: 1000;     /* Keeps it on top of other content */
 }
+
 
 .footer a {
     color:  #00BFFF;
