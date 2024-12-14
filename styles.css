@@ -1,0 +1,214 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #00BFFF;
+    text-decoration: underline;
+}
+
+.mpesa-container, .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.mpesa-message {
+    background-color: #222;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.mpesa-message strong {
+    color: #fff;
+    font-weight: bold;
+}
+
+.mpesa-message a {
+    color: #00BFFF;
+    font-size: 15px;
+}
+
+/* Submission Form Styles */
+.form-container {
+    margin: 0 auto;
+    max-width: 400px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.form-container h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #00BFFF;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #fff;
+    font-size: 15px;
+}
+
+input {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #111;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #00BFFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #009ACD;
+    transition: 0.3s;
+}
+.timestamp {
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* /* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121212;
+    padding: 10px 15px;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Circular Back Arrow */
+.circle {
+    background-color: #333;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.back-arrow {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* User Icon */
+.user-icon {
+    color: #aaa;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+/* MPESA Title */
+.mpesa-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Three Dots Menu */
+.menu-dots {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* Centered Date and Time */
+.date-time {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* MPESA Container */
+.mpesa-container {
+    padding: 10px;
+    margin: 10px;
+    background-color: #000;
+}
+
+.mpesa-message {
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+a {
+    color: #00ffea;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    padding: 15px 10px;
+    border-top: 1px solid #333;
+    background-color: #121212;
+    position: sticky;
+    bottom: 0;
+}
+
+.footer a {
+    color: #00ffea;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
