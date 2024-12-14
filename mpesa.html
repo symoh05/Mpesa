@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPESA Messages</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+   <div class="header">
+        <!-- Left Section: Back Arrow, User Icon, and MPESA Name -->
+        <div class="header-left">
+            <div class="circle">
+                <span class="back-arrow">&larr;</span>
+            </div>
+            <span class="user-icon">&#9679;</span> <!-- User Icon -->
+            <span class="mpesa-title">MPESA</span>
+        </div>
+        <!-- Three Dots Menu -->
+        <div class="menu-dots">
+            <span>&#8942;</span>
+        </div>
+    </div>
+
+    <!-- Message Container -->
+    <div class="mpesa-container">
+        <!-- Default Message -->
+        <div class="mpesa-message">
+            <!-- Date-Time for this message -->
+            <div class="date-time" id="messageDateTime1"></div>
+            <p>
+                <strong>M-PESA Till online</strong><br>
+                <a href="https://m-pesaforbusiness.co.ke">https://m-pesaforbusiness.co.ke</a>
+            </p>
+        </div>
+
+        <!-- First Transaction -->
+        <div class="mpesa-message">
+            <!-- Date-Time for this message -->
+            <div class="date-time" id="messageDateTime2"></div>
+            <p>
+                <strong>SLA7X9N9LH Confirmed.</strong> You have received <strong>Ksh1,000.00</strong> from <strong>JOHN NJOROGE</strong>.<br>
+                New M-PESA balance is Ksh2,438.00. Sign up for Lipa Na M-PESA Till online<br>
+                <a href="https://m-pesaforbusiness.co.ke">https://m-pesaforbusiness.co.ke</a>
+            </p>
+        </div>
+
+        <!-- Custom Submission Message -->
+        <div class="mpesa-message">
+            <!-- Date-Time for this message -->
+            <div class="date-time" id="messageDateTime3"></div>
+            <p>
+                <strong id="transaction-code"></strong> Confirmed. <strong>Ksh<span id="submitted-amount"></span></strong> paid to <strong><span id="submitted-name"></span></strong>.<br>
+                <!-- Date and Time immediately after the name -->
+                <strong>on <span id="transaction-date"></span> at <span id="transaction-time"></span></strong>.<br>
+                New M-PESA balance is Ksh2,348.00. Transaction cost, Ksh0.00. Amount you can transact within the day is 499,910.00.<br>
+                Download new M-PESA app on <a href="http://bit.ly/mpesappsm">http://bit.ly/mpesappsm</a> & get 500MB FREE data.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Can't reply to this short code. <a href="#">Learn more</a>
+    </div>
+
+<script>
+    // Current date and time
+    const currentTime = new Date();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    // Format the current date and time for the generated message
+    const formattedCurrentDateTime = `${days[currentTime.getDay()]} • ${currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+
+    // Function to update each message's date-time
+    function updateMessageDateTimes() {
+        // Generate random times for the first two messages
+        document.getElementById("messageDateTime1").innerText = getRandomPastTime(10, 120); // Between 10 mins and 2 hrs ago
+        document.getElementById("messageDateTime2").innerText = getRandomPastTime(10, 60);  // Between 10 mins and 1 hr ago
+
+        // Generated message: current date and time
+        document.getElementById("messageDateTime3").innerText = formattedCurrentDateTime;
+
+        // Populate generated message with name and amount
+        const recipientName = localStorage.getItem('recipientName') || "Recipient";
+        const amount = localStorage.getItem('amount') || "0";
+        document.getElementById('submitted-name').innerText = recipientName;
+        document.getElementById('submitted-amount').innerText = amount;
+
+        // Generate a random transaction code
+        const randomCode = "SLA" + Math.random().toString(36).substring(2, 8).toUpperCase();
+        document.getElementById('transaction-code').innerText = randomCode;
+
+        // Set transaction date and time for the generated message
+        const transactionDate = `${currentTime.getDate().toString().padStart(2, "0")}/${(currentTime.getMonth() + 1).toString().padStart(2, "0")}/${currentTime.getFullYear().toString().slice(-2)}`;
+        const transactionTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('transaction-date').innerText = transactionDate;
+        document.getElementById('transaction-time').innerText = transactionTime;
+    }
+
+    // Function to calculate a random past time within a range
+    function getRandomPastTime(minMinutesAgo, maxMinutesAgo) {
+        const randomMinutesAgo = Math.floor(Math.random() * (maxMinutesAgo - minMinutesAgo + 1)) + minMinutesAgo;
+        const pastTime = new Date(currentTime);
+        pastTime.setMinutes(currentTime.getMinutes() - randomMinutesAgo); // Subtract random minutes
+        const formattedPastDateTime = `${days[pastTime.getDay()]} • ${pastTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+        return formattedPastDateTime;
+    }
+
+    // Update the date-times for all messages
+    updateMessageDateTimes();
+</script>
+
+</body>
+</html>
