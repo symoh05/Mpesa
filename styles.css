@@ -200,6 +200,7 @@ a:hover {
     position: sticky;
     bottom: 0;
     position:fixed;
+    width:100%;
 }
 
 .footer a {
